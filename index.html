@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .row {
+            width: 1200;
+            display: flex;
+            border: 1px solid black;
+        }
+        .col-3 {
+            height: 50px;
+            width: 33.33%;
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Заголовок</h1>
+    <div class="row">
+        <div class="col-3"><input type="text" class="input_text"></div>
+        <div class="col-3"><input type="range" class="input_size"></div>
+        <div class="col-3"><input type="color" class="input_color"></div>
+    </div>
+    <div class="row">
+        <div class="col-3"><button class="sendText">Отправить текст</button></div>
+        <div class="col-3"><button class="sendSize" >Установить размер</button></div>
+        <div class="col-3"><button class="sendColor">Установить цвет</button></div>
+    </div>
+    <script>
+    let heading = document.querySelector("h1");
+    let buttonText = document.querySelector(".sendText");
+    let buttonSize = document.querySelector(".sendSize");
+    let buttonColor = document.querySelector(".sendColor");
+   
+    buttonText.addEventListener("click", (el) => {
+            el.preventDefault();
+            heading.innerText = document.querySelector(".input_text").value;
+            
+
+    });
+    buttonSize.addEventListener("click", (el) => {
+            el.preventDefault();
+            heading.style.fontSize = document.querySelector(".input_size").value + "px";
+            
+
+    });
+    buttonColor.addEventListener("click", (el) => {
+            el.preventDefault();
+            heading.style.color = document.querySelector(".input_color").value;
+            
+
+    });
+    
+       
+    </script>
+</body>
+</html>
